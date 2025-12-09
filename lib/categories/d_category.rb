@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Categories
   class DCategory < BaseCategory
     def calculate_days_remaining!

@@ -1,4 +1,6 @@
-require_relative 'categorizable'
+# frozen_string_literal: true
+
+require_relative "categorizable"
 
 class GildedRose
   include Categorizable

@@ -1,12 +1,13 @@
 AllCops:
-  TargetRubyVersion: 2.2
+  TargetRubyVersion: 3.3
+  NewCops: enable
+  SuggestExtensions: false
 
   Exclude:
     - "bin/**/*"
     - "spec/**/*"
-    - "lib/gilded_rose.rb"
 
-Metrics/LineLength:
+Layout/LineLength:
   Max: 120
 
 # We like to use the hash rocket in rake files.
@@ -26,8 +27,8 @@ Style/MutableConstant:
 Style/SignalException:
   Enabled: false
 
-# We are not going to line up parameters that span more than one line.
-Style/AlignParameters:
+# # We are not going to line up parameters that span more than one line.
+Layout/ParameterAlignment:
   Enabled: false
 
 # We are okay with using extend self instead of module_function.
@@ -36,4 +37,7 @@ Style/ModuleFunction:
 
 # We are going to skip top-level class documentation for katas.
 Style/Documentation:
+  Enabled: false
+
+Style/MultilineTernaryOperator:
   Enabled: false
