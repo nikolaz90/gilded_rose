@@ -7,11 +7,11 @@ module Categories
       @quality = quality
     end
 
-    def calculate_quality
+    def calculate_quality!
       raise NotImplementedError
     end
 
-    def calculate_days_remaining
+    def calculate_days_remaining!
       raise NotImplementedError
     end
   end
