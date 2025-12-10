@@ -2,21 +2,21 @@
 
 module Categories
   class CCategory < BaseCategory
-    def calculate_days_remaining!
-      @days_remaining = days_remaining - 1
+    def calculate_days_remaining(days_remaining:)
+      days_remaining - 1
     end
 
-    def calculate_quality!
+    def calculate_quality(days_remaining:, quality:)
       return 0 if days_remaining <= 0
 
-      total_quality = quality + quality_difference
+      total_quality = quality + quality_difference(days_remaining)
 
-      @quality = [total_quality, 50].min
+      [total_quality, 50].min
     end
 
     private
 
-    def quality_difference
+    def quality_difference(days_remaining)
       case days_remaining
       when (6..10)
         2

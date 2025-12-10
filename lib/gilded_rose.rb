@@ -23,10 +23,10 @@ class GildedRose
   private
 
   def calculate_days_remaining!
-    @days_remaining = @category.calculate_days_remaining!
+    @days_remaining = @category.calculate_days_remaining(days_remaining:)
   end
 
   def calculate_quality!
-    @quality = @category.calculate_quality!
+    @quality = @category.calculate_quality(days_remaining:, quality:)
   end
 end

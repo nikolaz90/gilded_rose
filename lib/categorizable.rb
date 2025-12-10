@@ -21,6 +21,6 @@ module Categorizable
   end
 
   def set_category
-    @category = category_class.new(days_remaining:, quality:)
+    @category = category_class.new
   end
 end
