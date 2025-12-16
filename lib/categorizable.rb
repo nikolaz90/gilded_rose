@@ -9,6 +9,7 @@ require_relative "categories/e_category"
 
 module Categorizable
   CATEGORIES_MAP = {
+    "regular_item" => Categories::ACategory,
     "aged_brie" => Categories::BCategory,
     "backstage_passes_to_a_tafkal80etc_concert" => Categories::CCategory,
     "sulfuras__hand_of_ragnaros" => Categories::DCategory,
@@ -17,7 +18,7 @@ module Categorizable
 
   def category_class
     categorizable_name = name.downcase.gsub(/\s|[^a-z0-9]/, "_")
-    CATEGORIES_MAP[categorizable_name] || Categories::ACategory
+    CATEGORIES_MAP[categorizable_name] || CATEGORIES_MAP["regular_item"]
   end
 
   def set_category
